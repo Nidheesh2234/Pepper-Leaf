@@ -15,7 +15,7 @@ interface ProductCardProps {
 export function ProductCard({ title, price, image, tag }: ProductCardProps) {
     return (
         <motion.div
-            className="group relative bg-card rounded-2xl overflow-hidden border border-transparent hover:border-border/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(255,255,255,0.03)] transition-all duration-300 transform hover:-translate-y-1"
+            className="group relative bg-card rounded-2xl overflow-hidden border border-transparent shadow-soft hover:shadow-medium hover:border-pepper-200/50 dark:hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2"
         >
             <div className="absolute top-4 left-4 z-10">
                 <span className="px-3 py-1 rounded-full bg-background/80 backdrop-blur-md text-xs font-semibold text-pepper-700 uppercase tracking-wider">

@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
@@ -22,7 +22,7 @@ export function ScrollReveal({
     amount = 0.3
 }: ScrollRevealProps) {
 
-    const variants = {
+    const variants: Variants = {
         hidden: {
             opacity: 0,
             y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
