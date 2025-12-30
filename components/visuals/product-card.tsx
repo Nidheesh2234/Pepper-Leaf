@@ -28,7 +28,7 @@ export function ProductCard({ title, price, image, tag }: ProductCardProps) {
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105"
                 />
             </div>
 

@@ -6,10 +6,10 @@ import { motion } from "framer-motion"
 export function Footer() {
     return (
         <div
-            className="fixed bottom-0 w-full h-[500px] bg-pepper-900 text-pepper-50 z-0 flex items-center justify-center"
-            style={{ height: '500px' }} // Fixed height for reveal calculation
+            className="relative md:fixed bottom-0 w-full min-h-max md:h-[500px] bg-pepper-900 text-pepper-50 z-0 flex items-center justify-center pt-16 md:pt-0 pb-16 md:pb-0"
+            style={{ height: 'auto' }} // Override fixed height for responsiveness
         >
-            <div className="container px-4 grid md:grid-cols-4 gap-12">
+            <div className="container px-4 grid grid-cols-1 md:grid-cols-4 gap-12 pt-12 md:pt-0">
                 <div className="space-y-6">
                     <h3 className="font-serif text-3xl font-bold">PepperLeaf</h3>
                     <p className="text-pepper-200/80 max-w-xs">
