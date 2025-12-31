@@ -9,11 +9,13 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { HoverStaggeredText } from "@/components/visuals/staggered-text"
 import { MobileMenu } from "@/components/layout/mobile-menu"
+import { useCart } from "@/context/cart-context"
 
 export function Navbar() {
     const { scrollY } = useScroll()
     const [isScrolled, setIsScrolled] = React.useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+    const { cartCount, setIsCartOpen } = useCart()
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         setIsScrolled(latest > 50)
@@ -48,14 +50,25 @@ export function Navbar() {
                     </nav>
                     <div className="flex items-center gap-2">
                         <ThemeToggle />
-                        <Button size="icon" variant="ghost" className="relative group">
+                        <Button
+                            size="icon"
+                            variant="ghost"
+                            className="relative group"
+                            onClick={() => setIsCartOpen(true)}
+                        >
                             <ShoppingBag className="h-5 w-5 transition-transform group-hover:scale-110" />
-                            <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary ring-2 ring-background"></span>
+                            {cartCount > 0 && (
+                                <span className="absolute top-1 right-1 h-4 w-4 rounded-full bg-secondary text-[10px] font-bold text-white flex items-center justify-center ring-2 ring-background animate-in zoom-in">
+                                    {cartCount}
+                                </span>
+                            )}
                         </Button>
-                        <Button className="hidden md:flex bg-primary hover:bg-primary/90 text-white rounded-full px-6 group overflow-hidden">
-                            <span className="relative z-10">
-                                <HoverStaggeredText text="Shop Now" />
-                            </span>
+                        <Button asChild className="hidden md:flex bg-primary hover:bg-primary/90 text-white rounded-full px-6 group overflow-hidden">
+                            <Link href="/shop">
+                                <span className="relative z-10">
+                                    <HoverStaggeredText text="Shop Now" />
+                                </span>
+                            </Link>
                         </Button>
                         <Button
                             size="icon"

@@ -102,8 +102,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         </nav>
 
                         <div className="mt-auto space-y-4">
-                            <Button className="w-full h-12 rounded-full text-lg gap-2" size="lg">
-                                <ShoppingBag className="w-5 h-5" /> Shop Now
+                            <Button asChild className="w-full h-12 rounded-full text-lg gap-2" size="lg">
+                                <Link href="/shop" onClick={onClose}>
+                                    <ShoppingBag className="w-5 h-5" /> Shop Now
+                                </Link>
                             </Button>
                         </div>
                     </motion.div>
