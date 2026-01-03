@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { JarIllustration } from "@/components/visuals/jar-illustration"
 import { ScrollReveal } from "@/components/visuals/scroll-reveal"
@@ -60,8 +61,10 @@ export function Hero() {
 
                     <ScrollReveal delay={0.5}>
                         <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
-                            <Button size="lg" className="rounded-full text-base h-12 md:h-14 px-8 shadow-glow bg-pepper-500 hover:bg-pepper-600 text-white border-0 w-full sm:w-auto">
-                                Explore Best Sellers <ArrowRight className="ml-2 w-4 h-4" />
+                            <Button asChild size="lg" className="rounded-full text-base h-12 md:h-14 px-8 shadow-glow bg-pepper-500 hover:bg-pepper-600 text-white border-0 w-full sm:w-auto">
+                                <Link href="/#best-sellers">
+                                    Explore Best Sellers <ArrowRight className="ml-2 w-4 h-4" />
+                                </Link>
                             </Button>
                             <Button variant="outline" size="lg" className="rounded-full text-base h-12 md:h-14 px-8 border-2 w-full sm:w-auto">
                                 Get Gift Box

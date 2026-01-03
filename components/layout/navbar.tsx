@@ -43,10 +43,10 @@ export function Navbar() {
                         </motion.span>
                     </Link>
                     <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-                        <Link href="#best-sellers" className="transition-colors hover:text-primary">Best Sellers</Link>
-                        <Link href="#why-us" className="transition-colors hover:text-primary">Why Us</Link>
-                        <Link href="#process" className="transition-colors hover:text-primary">Our Process</Link>
-                        <Link href="#reviews" className="transition-colors hover:text-primary">Reviews</Link>
+                        <Link href="/#best-sellers" className="transition-colors hover:text-primary">Best Sellers</Link>
+                        <Link href="/#why-us" className="transition-colors hover:text-primary">Why Us</Link>
+                        <Link href="/#process" className="transition-colors hover:text-primary">Our Process</Link>
+                        <Link href="/#reviews" className="transition-colors hover:text-primary">Reviews</Link>
                     </nav>
                     <div className="flex items-center gap-2">
                         <ThemeToggle />

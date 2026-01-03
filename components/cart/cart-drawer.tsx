@@ -3,6 +3,7 @@
 import { useCart } from "@/context/cart-context"
 import { X, ShoppingBag, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { CartItem } from "./cart-item"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -72,8 +73,10 @@ export function CartDrawer() {
                                 <p className="text-xs text-muted-foreground text-center">
                                     Shipping and taxes calculated at checkout.
                                 </p>
-                                <Button className="w-full h-12 text-lg rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg">
-                                    Checkout <ArrowRight className="ml-2 h-4 w-4" />
+                                <Button asChild className="w-full h-12 text-lg rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg">
+                                    <Link href="/checkout" onClick={() => setIsCartOpen(false)}>
+                                        Checkout <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
                                 </Button>
                             </div>
                         )}
