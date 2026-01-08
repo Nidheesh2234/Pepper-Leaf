@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
 import { BestSellers } from "@/components/sections/best-sellers";
 import { WhyUs } from "@/components/sections/why-us";
+import { OurStory } from "@/components/sections/our-story";
 import { ProjectProcess } from "@/components/sections/process";
 import { Reviews } from "@/components/sections/reviews";
 import { Footer } from "@/components/layout/footer";
@@ -19,6 +20,7 @@ export default function Home() {
         <BestSellers />
         <MarqueeSeparator text="PURE • FRESH • TRADITIONAL • TASTY" />
         <WhyUs />
+        <OurStory />
         <ProjectProcess />
         <Reviews />
       </main>

@@ -31,7 +31,7 @@ export function Footer() {
                 <div>
                     <h4 className="font-bold mb-6 text-pepper-100 uppercase tracking-widest text-sm">Company</h4>
                     <ul className="space-y-4 text-pepper-200/80">
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Our Story</Link></li>
+                        <li><Link href="#our-story" className="hover:text-pepper-50 transition-colors">Our Story</Link></li>
                         <li><Link href="#" className="hover:text-pepper-50 transition-colors">Contact</Link></li>
                         <li><Link href="#" className="hover:text-pepper-50 transition-colors">FAQ</Link></li>
                         <li><Link href="#" className="hover:text-pepper-50 transition-colors">Shipping Policy</Link></li>
