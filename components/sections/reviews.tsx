@@ -13,23 +13,45 @@ const reviews = [
 
 export function Reviews() {
     return (
-        <section id="reviews" className="py-24 bg-pepper-900 text-pepper-50">
-            <div className="container px-4">
+        <section id="reviews" className="py-24 bg-stone-900 text-stone-100 relative overflow-hidden">
+            {/* Gradient Orb */}
+            <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] bg-pepper-900/30 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-[-20%] right-[20%] w-[500px] h-[500px] bg-paprika-900/20 rounded-full blur-[100px] pointer-events-none" />
+
+            <div className="container px-4 relative z-10">
                 <ScrollReveal>
-                    <h2 className="text-4xl font-serif font-bold text-center mb-12">Love from our Family</h2>
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center justify-center p-2 mb-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <div className="flex -space-x-2 mr-3">
+                                {[1, 2, 3].map(i => (
+                                    <div key={i} className={`w-8 h-8 rounded-full border-2 border-stone-900 bg-stone-700`} />
+                                ))}
+                            </div>
+                            <span className="text-sm font-medium pr-2">Join 10,000+ Families</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold">Love from our Community</h2>
+                    </div>
                 </ScrollReveal>
-                <div className="grid md:grid-cols-3 gap-8">
+
+                <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
                     {reviews.map((r, i) => (
                         <ScrollReveal key={i} delay={i * 0.1}>
-                            <Card className="bg-white/5 border-white/10 text-pepper-50 backdrop-blur-md h-full hover:bg-white/10 transition-colors">
-                                <CardContent className="p-8 space-y-4">
-                                    <div className="flex gap-1">
-                                        {[...Array(r.rating)].map((_, i) => <Star key={i} className="fill-turmeric-500 text-turmeric-500 w-4 h-4" />)}
+                            <Card className="bg-white/5 border-white/5 text-stone-100 backdrop-blur-md h-full hover:bg-white/10 transition-all hover:-translate-y-1 duration-300">
+                                <CardContent className="p-8 flex flex-col h-full justify-between gap-6">
+                                    <div className="space-y-4">
+                                        <div className="flex gap-1">
+                                            {[...Array(r.rating)].map((_, i) => <Star key={i} className="fill-yellow-500 text-yellow-500 w-4 h-4" />)}
+                                        </div>
+                                        <p className="text-lg leading-relaxed font-serif opacity-90">&quot;{r.text}&quot;</p>
                                     </div>
-                                    <p className="italic opacity-90">&quot;{r.text}&quot;</p>
-                                    <div>
-                                        <div className="font-bold">{r.name}</div>
-                                        <div className="text-sm opacity-60 m-0">{r.city}</div>
+                                    <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pepper-500 to-pepper-700 flex items-center justify-center font-bold text-sm">
+                                            {r.name.charAt(0)}
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-sm">{r.name}</div>
+                                            <div className="text-xs opacity-50">{r.city}</div>
+                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>

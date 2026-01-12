@@ -36,127 +36,94 @@ const stats = [
 
 export function OurStory() {
     return (
-        <section id="our-story" className="py-24 md:py-32 bg-gradient-to-b from-paprika-50/30 to-background dark:from-paprika-900/10 dark:to-background relative overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-paprika-200/20 blur-3xl" />
-            <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-pepper-200/20 blur-3xl" />
+        <section id="our-story" className="py-24 md:py-32 bg-stone-50 dark:bg-stone-900 relative overflow-hidden">
+            {/* Texture/Noise overlay specific to this section if needed, but global covers it */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-paprika-100/20 dark:bg-paprika-900/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-pepper-100/20 dark:bg-pepper-900/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
 
             <div className="container px-4 relative z-10">
-                {/* Section Header */}
                 <ScrollReveal>
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-sm font-medium tracking-widest uppercase text-paprika-500 mb-4 block">Our Story</span>
-                        <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
-                            A Story Roasted in <span className="text-transparent bg-clip-text bg-gradient-to-r from-paprika-500 to-pepper-600 italic">Tradition</span>
+                    <div className="flex flex-col items-center text-center mb-20">
+                        <span className="text-sm font-bold tracking-[0.2em] text-paprika-600 uppercase mb-4">Legacy</span>
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">
+                            A Story <span className="italic font-light text-pepper-600">Roasted</span> in Tradition
                         </h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-paprika-400 to-transparent" />
                     </div>
                 </ScrollReveal>
 
-                {/* Hero Quote */}
-                <ScrollReveal delay={0.1}>
-                    <div className="max-w-4xl mx-auto mb-20 relative">
-                        <div className="bg-pepper-50/50 dark:bg-pepper-900/20 rounded-3xl p-8 md:p-12 border border-pepper-200/50 dark:border-pepper-700/30 shadow-soft">
-                            <Quote className="w-10 h-10 text-paprika-400/50 mb-6" />
-                            <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-6">
-                                "My grandmother always said the secret to great pickles isn't just the recipe—it's the love you put into every jar. 
-                                We don't just make food, we preserve memories. Each spoonful carries the warmth of an Andhra kitchen 
-                                where three generations of women laughed, cooked, and passed down traditions."
-                            </blockquote>
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-paprika-400 to-pepper-600 flex items-center justify-center text-white font-serif text-xl font-bold">
-                                    PL
-                                </div>
-                                <div>
-                                    <p className="font-bold text-foreground">The PepperLeaf Family</p>
-                                    <p className="text-sm text-muted-foreground">Founders, Carrying Forward Ammamma's Legacy</p>
+                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
+                    {/* Image Side - Collage style */}
+                    <div className="relative">
+                        <ScrollReveal delay={0.1}>
+                            <div className="relative z-10 rounded-2xl overflow-hidden shadow-strong aspect-[4/5] lg:aspect-square bg-stone-200">
+                                {/* Ideally we place a real image here */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                                <div className="absolute bottom-8 left-8 right-8 z-20 text-white">
+                                    <p className="font-serif text-2xl italic">"The secret isn't just the recipe, it's the patience."</p>
+                                    <p className="text-sm mt-2 opacity-80 uppercase tracking-widest">— Ammamma</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </ScrollReveal>
+                        </ScrollReveal>
 
-                {/* Story Paragraphs */}
-                <ScrollReveal delay={0.2}>
-                    <div className="max-w-3xl mx-auto mb-20 space-y-6 text-lg text-muted-foreground leading-relaxed">
-                        <p>
-                            It all began in a small village kitchen in <strong className="text-foreground">Duggirala, Andhra Pradesh</strong>, 
-                            where our grandmother—Ammamma—spent over 40 years perfecting the art of pickling and spice-making. 
-                            Her Avakaya was legendary in the village, with neighbors traveling miles just for a taste.
-                        </p>
-                        <p>
-                            She sourced chilies directly from Guntur farmers, ground spices on the same stone mortar her mother used, 
-                            and sun-dried ingredients under the coastal Andhra sun. There were no shortcuts—just patience, tradition, and an uncompromising love for authenticity.
-                        </p>
-                        <p>
-                            When industrial packaged foods began replacing homemade traditions, we saw recipes being lost forever. 
-                            In 2018, we made a promise: to bring <strong className="text-foreground">Ammamma's kitchen to every Indian home</strong>, 
-                            without compromising on the methods that made her food unforgettable.
-                        </p>
+                        {/* Decorative elements behind */}
+                        <motion.div
+                            className="absolute -top-8 -left-8 w-full h-full border-2 border-pepper-200 dark:border-pepper-800 rounded-2xl z-0"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1 }}
+                        />
+                        <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-paprika-100 dark:bg-paprika-900/20 rounded-full blur-2xl z-0" />
                     </div>
-                </ScrollReveal>
 
-                {/* Timeline */}
-                <div className="max-w-4xl mx-auto mb-20">
-                    <ScrollReveal>
-                        <h3 className="text-2xl font-serif font-bold text-center mb-12">Our Journey</h3>
-                    </ScrollReveal>
-                    
-                    <div className="relative">
-                        {/* Vertical Line */}
-                        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-pepper-200 dark:bg-pepper-700 -translate-x-1/2" />
-                        
-                        <div className="space-y-12">
-                            {milestones.map((milestone, i) => (
-                                <ScrollReveal key={i} delay={i * 0.15}>
-                                    <div className={`relative flex items-center gap-6 md:gap-12 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                                        {/* Dot */}
-                                        <motion.div 
-                                            initial={{ scale: 0 }}
-                                            whileInView={{ scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: 0.2, type: "spring" }}
-                                            className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-paprika-500 border-4 border-background -translate-x-1/2 z-10"
-                                        />
-                                        
-                                        {/* Content */}
-                                        <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                                            <span className="inline-block px-3 py-1 rounded-full bg-paprika-100 dark:bg-paprika-900/30 text-paprika-600 dark:text-paprika-400 text-sm font-bold mb-2">
-                                                {milestone.year}
-                                            </span>
-                                            <h4 className="text-xl font-bold text-foreground mb-2">{milestone.title}</h4>
-                                            <p className="text-muted-foreground">{milestone.desc}</p>
-                                        </div>
-                                        
-                                        {/* Spacer for alternating layout */}
-                                        <div className="hidden md:block md:w-1/2" />
-                                    </div>
-                                </ScrollReveal>
-                            ))}
-                        </div>
+                    {/* Text Content */}
+                    <div className="space-y-8">
+                        <ScrollReveal delay={0.2}>
+                            <h3 className="text-3xl font-serif font-bold mb-4">From Duggirala with Love</h3>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                It all started in a small village kitchen in Andhra Pradesh, where our grandmother spent 40 years mastering the perfect sun-dried Avakaya.
+                                There were no shortcuts then, and there are no shortcuts now.
+                            </p>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={0.3}>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                We source our chilies directly from Guntur farmers and grind our spices on traditional stone mortars.
+                                Every jar that leaves our kitchen carries the warmth of thsoe summer afternoons.
+                            </p>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={0.4}>
+                            <div className="grid grid-cols-2 gap-8 pt-4">
+                                <div>
+                                    <div className="text-3xl font-bold text-pepper-600 mb-1">1985</div>
+                                    <div className="text-sm text-muted-foreground uppercase tracking-wider">Ammamma's First Batch</div>
+                                </div>
+                                <div>
+                                    <div className="text-3xl font-bold text-pepper-600 mb-1">10k+</div>
+                                    <div className="text-sm text-muted-foreground uppercase tracking-wider">Kitchens Served</div>
+                                </div>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
 
-                {/* Stats Strip */}
-                <ScrollReveal delay={0.3}>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
-                        {stats.map((stat, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="text-center p-6 rounded-2xl bg-background/80 backdrop-blur-sm border border-pepper-200/50 dark:border-pepper-700/30 shadow-soft hover:shadow-medium transition-shadow duration-300"
-                            >
-                                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-pepper-100 dark:bg-pepper-800/50 text-pepper-600 dark:text-pepper-400 mb-4">
-                                    <stat.icon className="w-6 h-6" />
+                {/* Timeline Reimagined - Horizontal cards or just a simple distinct row */}
+                <div className="grid md:grid-cols-4 gap-6">
+                    {milestones.map((m, i) => (
+                        <ScrollReveal key={i} delay={i * 0.1}>
+                            <div className="relative p-6 pt-12 rounded-2xl bg-white dark:bg-stone-800/50 shadow-sm border border-stone-100 dark:border-stone-800 hover:shadow-medium transition-shadow">
+                                <div className="absolute top-6 left-6 text-4xl font-black text-stone-100 dark:text-stone-700/50 z-0 select-none">
+                                    {m.year}
                                 </div>
-                                <div className="text-2xl md:text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                                <div className="text-sm text-muted-foreground">{stat.label}</div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </ScrollReveal>
+                                <div className="relative z-10">
+                                    <h4 className="font-serif font-bold text-lg mb-2">{m.title}</h4>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    ))}
+                </div>
             </div>
         </section>
     )

@@ -5,53 +5,84 @@ import { motion } from "framer-motion"
 
 export function Footer() {
     return (
-        <div
-            className="relative md:fixed bottom-0 w-full min-h-max md:h-[500px] bg-pepper-900 text-pepper-50 z-0 flex items-center justify-center pt-16 md:pt-0 pb-16 md:pb-0"
-            style={{ height: 'auto' }} // Override fixed height for responsiveness
-        >
-            <div className="container px-4 grid grid-cols-1 md:grid-cols-4 gap-12 pt-12 md:pt-0">
-                <div className="space-y-6">
-                    <h3 className="font-serif text-3xl font-bold">PepperLeaf</h3>
-                    <p className="text-pepper-200/80 max-w-xs">
-                        Handcrafted small-batch spices and pickles.
-                        Made with love, stone-ground, and sun-dried.
-                    </p>
-                </div>
+        <footer className="relative bg-stone-950 text-stone-300 overflow-hidden pt-24 pb-12">
+            {/* Organic Texture Overlay */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")` }} />
 
-                <div>
-                    <h4 className="font-bold mb-6 text-pepper-100 uppercase tracking-widest text-sm">Shop</h4>
-                    <ul className="space-y-4 text-pepper-200/80">
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Best Sellers</Link></li>
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Spices</Link></li>
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Pickles</Link></li>
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Gift Boxes</Link></li>
-                    </ul>
-                </div>
+            {/* Background Gradients */}
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-pepper-900/20 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-paprika-900/10 rounded-full blur-[120px] pointer-events-none" />
 
-                <div>
-                    <h4 className="font-bold mb-6 text-pepper-100 uppercase tracking-widest text-sm">Company</h4>
-                    <ul className="space-y-4 text-pepper-200/80">
-                        <li><Link href="#our-story" className="hover:text-pepper-50 transition-colors">Our Story</Link></li>
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Contact</Link></li>
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">FAQ</Link></li>
-                        <li><Link href="#" className="hover:text-pepper-50 transition-colors">Shipping Policy</Link></li>
-                    </ul>
-                </div>
+            <div className="container px-4 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24 mb-16">
+                    {/* Brand Column */}
+                    <div className="space-y-6">
+                        <Link href="/" className="block">
+                            <span className="font-serif text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-stone-400">
+                                PepperLeaf
+                            </span>
+                        </Link>
+                        <p className="text-stone-400 leading-relaxed max-w-xs">
+                            Hand-ground spices and sun-dried pickles. Bringing the authentic taste of Andhra kitchens to the world, one jar at a time.
+                        </p>
+                        <div className="flex gap-4">
+                            {/* Social Placeholders with organic shapes */}
+                            {['I', 'F', 'T', 'Y'].map((s, i) => (
+                                <div key={i} className="w-10 h-10 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center hover:border-pepper-500 hover:text-pepper-400 transition-colors cursor-pointer">
+                                    {s}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
-                <div>
-                    <h4 className="font-bold mb-6 text-pepper-100 uppercase tracking-widest text-sm">Stay Spicy</h4>
-                    <div className="flex gap-2">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="bg-pepper-800/50 border-pepper-700 text-pepper-50 px-4 py-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-pepper-500"
-                        />
-                        <button className="bg-pepper-500 hover:bg-pepper-400 text-white px-4 py-2 rounded-lg transition-colors">
-                            Join
-                        </button>
+                    {/* Navigation - Shop */}
+                    <div>
+                        <h4 className="font-bold text-white mb-6 tracking-wide">Shop</h4>
+                        <ul className="space-y-4">
+                            <li><Link href="/shop" className="hover:text-pepper-400 transition-colors">Best Sellers</Link></li>
+                            <li><Link href="/shop?cat=pickles" className="hover:text-pepper-400 transition-colors">Pickles</Link></li>
+                            <li><Link href="/shop?cat=spices" className="hover:text-pepper-400 transition-colors">Spices & Masalas</Link></li>
+                            <li><Link href="/shop?cat=podis" className="hover:text-pepper-400 transition-colors">Podis</Link></li>
+                            <li><Link href="/shop?cat=gifts" className="hover:text-pepper-400 transition-colors">Gift Boxes</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Navigation - Company */}
+                    <div>
+                        <h4 className="font-bold text-white mb-6 tracking-wide">Company</h4>
+                        <ul className="space-y-4">
+                            <li><Link href="/#our-story" className="hover:text-pepper-400 transition-colors">Our Story</Link></li>
+                            <li><Link href="/contact" className="hover:text-pepper-400 transition-colors">Contact Us</Link></li>
+                            <li><Link href="/faq" className="hover:text-pepper-400 transition-colors">FAQs</Link></li>
+                            <li><Link href="/shipping" className="hover:text-pepper-400 transition-colors">Shipping & Returns</Link></li>
+                            <li><Link href="/privacy" className="hover:text-pepper-400 transition-colors">Privacy Policy</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Newsletter - Organic Input */}
+                    <div>
+                        <h4 className="font-bold text-white mb-6 tracking-wide">Stay Spicy</h4>
+                        <p className="text-stone-400 mb-4 text-sm">Join our family for secret recipes and early access to new batches.</p>
+                        <div className="relative">
+                            <input
+                                type="email"
+                                placeholder="your@email.com"
+                                className="w-full bg-stone-900 border border-stone-800 rounded-2xl px-4 py-3 text-stone-200 focus:outline-none focus:border-pepper-500 focus:ring-1 focus:ring-pepper-500 transition-all placeholder:text-stone-600"
+                            />
+                            <button className="absolute right-1.5 top-1.5 bottom-1.5 bg-pepper-600 hover:bg-pepper-500 text-white px-4 rounded-xl text-sm font-medium transition-colors">
+                                Join
+                            </button>
+                        </div>
                     </div>
                 </div>
+
+                <div className="border-t border-stone-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-500">
+                    <p>© 2024 PepperLeaf Spices. All rights reserved.</p>
+                    <p className="flex items-center gap-2">
+                        Made with <motion.span animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="text-red-500">♥</motion.span> in Andhra
+                    </p>
+                </div>
             </div>
-        </div>
+        </footer>
     )
 }
